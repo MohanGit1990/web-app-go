@@ -1,1 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-go
+  labels:
+    app: web-app-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app-go
+  template:
+    metadata:
+      labels:
+        app: web-app-go
+    spec:
+      containers:
+      - name: web-app-go
+        image: mohankumar1990/web-app-go
+        ports:
+        - containerPort: 80
 
